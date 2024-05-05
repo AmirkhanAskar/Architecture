@@ -12,5 +12,9 @@ urlpatterns = [
     path('interior/<int:interior_id>/', views.interior_detail, name='interior_detail'),
     path('exterior', views.exterior_page, name='exterior_page'),
     path('exterior/<int:exterior_id>/', views.exterior_detail, name='exterior_detail'),
+    path('kitchen', views.kitchen_page, name='kitchen_page'),
+    path('kitchen/<int:kitchen_id>/', views.kitchen_detail, name='kitchen_detail'),
+    path('privateHouse', views.privateHouse_page, name='privateHouse_page'),
+    path('privateHouse/<int:privateHouse_id>/', views.privateHouse_detail, name='privateHouse_detail'),
     path('blog/<int:blog_id>/comment/', views.add_comment, name='add_comment'),
 ]

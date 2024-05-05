@@ -43,68 +43,66 @@
 
     <header class="pd-20px">
         <nav class="text-white px-4 lg:px-6 py-2.5"  style="background-color: #000; position: fixed; top: 0; left: 0; width: 100%; z-index: 999;">
-            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <!-- Your logo and brand name -->
-                <a href="{% url 'home' %}" class="flex items-center">
-                    <img src="media/media/tobe_mainlogo.png" style="max-height: 35px; margin-right: 10px;" />
-                </a>
-                <!-- Mobile menu button -->
-                <div class="flex items-center lg:order-2">
-                    <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-                <!-- Main navigation menu -->
-                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-16 lg:mt-0">
-                        <li>
-                            <a href="{% url 'home' %}" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Главная</a>
-                        </li>
-
-                        <!-- Projects button -->
-                        <li class="relative border-b border-gray-700" style="z-index: 10;">
-                            <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                                <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm text-left block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">
-                                    <span>Проекты</span>
-                                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                </button>
-                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-                                    <div class="px-2 py-2 bg-gray-950 rounded-md shadow">
-                                        <a class="block px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'interior_page' %}">Интерьер</a>
-                                        <a class="block px-4 py-2 mt-2 text-l text-white bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'exterior_page' %}">Экстерьер</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a href="{% url 'about' %}" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">О нас</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Услуги</a>
-                        </li>
-
-                        <!-- Add other navigation links as needed -->
-
-                        <li id="interButton">
-                            <a href="{% url 'blog_page' %}" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Блог</a>
-                        </li>
-                        <li id="contactButton">
-                            <a href="{% url 'contact' %}" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Контакты</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
+           <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+              <!-- Your logo and brand name -->
+              <a href="{% url 'home' %}" class="flex items-center">
+              <img src="/media/media/randomLogo.png" style="max-height: 35px; margin-right: 10px;" />
+              </a>
+              <!-- Mobile menu button -->
+              <div class="flex items-center lg:order-2">
+                 <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                       <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                       <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                 </button>
+              </div>
+              <!-- Main navigation menu -->
+              <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-16 lg:mt-0">
+                    <li>
+                       <a href="{% url 'home' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Главная</a>
+                    </li>
+                    <!-- Projects button -->
+                    <li class="relative border-b border-gray-700" style="z-index: 10;">
+                       <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                          <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm text-left block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">
+                             <span style="font-family: 'CenturyGothic', Arial, sans-serif;">Проекты</span>
+                             <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                             </svg>
+                          </button>
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 xl:w-48">
+                             <div class="px-2 w-96 py-2 bg-gray-950 rounded-md shadow">
+                                <a class="block w-96 px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'interior_page' %}">Дизайн интерьеров квартир</a>
+                                <a class="block w-96 px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'exterior_page' %}">Дизайн интерьеров таунхаусов</a>
+                                <a class="block w-96 px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'privateHouse_page' %}">Дизайн интерьеров частных домов</a>
+                                <a class="block w-96 px-4 py-2 mt-2 text-l text-white bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'kitchen_page' %}">Дизайн кухонных наборов</a>
+                             </div>
+                          </div>
+                       </div>
+                    </li>
+                    <li>
+                       <a href="{% url 'about' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">О нас</a>
+                    </li>
+                    <li>
+                       <a href="{% url 'services' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Услуги</a>
+                    </li>
+                    <!-- Add other navigation links as needed -->
+                    <li id="interButton">
+                       <a href="{% url 'blog_page' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Блог</a>
+                    </li>
+                    <li id="contactButton">
+                       <a href="{% url 'contact' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;"" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Контакты</a>
+                    </li>
+                 </ul>
+              </div>
+           </div>
         </nav>
-    </header>
-
+     </header>
 
 
 
@@ -365,12 +363,12 @@
     </section>
 
 
-    <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4 pt-20" style="position: relative; z-index: 2;">
+    <footer class="bg-white rounded-lg m-4 pt-20" style="position: relative; z-index: 2;">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a href="{% url 'home' %}" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                    <img src="/media/media/tobe_mainlogo_dark.png" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TÓBE</span>
+                    <img src="/media/media/randomLogo.png" class="h-8" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GULIMA DESIGN</span>
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>

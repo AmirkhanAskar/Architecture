@@ -13,74 +13,74 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
       <link href="https://cdn.flowbite.com/flowbite.css" rel="stylesheet">
-      <link rel="stylesheet" href="{% static '/css/AllStyles.css' %}">
+      <link rel="stylesheet" href="{% static 'css/AllStyles.css' %}">
    </head>
    <body style="font-family: 'CenturyGothic', Arial, sans-serif;">
       <header class="pd-20px">
-         <nav class="text-white px-4 lg:px-6 py-2.5"  style="background-color: #000; position: fixed; top: 0; left: 0; width: 100%; z-index: 999;">
-            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-               <!-- Your logo and brand name -->
-               <a href="{% url 'home' %}" class="flex items-center">
-               <img src="media/media/tobe_mainlogo.png" style="max-height: 35px; margin-right: 10px;" />
-               </a>
-               <!-- Mobile menu button -->
-               <div class="flex items-center lg:order-2">
-                  <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                     <span class="sr-only">Open main menu</span>
-                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                     </svg>
-                     <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                     </svg>
-                  </button>
-               </div>
-               <!-- Main navigation menu -->
-               <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-                  <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-16 lg:mt-0">
-                     <li>
-                        <a href="{% url 'home' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Главная</a>
-                     </li>
-                     <!-- Projects button -->
-                     <li class="relative border-b border-gray-700" style="z-index: 10;">
-                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                           <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm text-left block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">
-                              <span style="font-family: 'CenturyGothic', Arial, sans-serif;">Проекты</span>
-                              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
-                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                              </svg>
-                           </button>
-                           <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-                              <div class="px-2 py-2 bg-gray-950 rounded-md shadow">
-                                 <a class="block px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'interior_page' %}">Интерьер</a>
-                                 <a class="block px-4 py-2 mt-2 text-l text-white bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'exterior_page' %}">Экстерьер</a>
-                              </div>
+      <nav class="text-white px-4 lg:px-6 py-2.5"  style="background-color: #000; position: fixed; top: 0; left: 0; width: 100%; z-index: 999;">
+         <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <!-- Your logo and brand name -->
+            <a href="{% url 'home' %}" class="flex items-center">
+            <img src="/media/media/randomLogo.png" style="max-height: 35px; margin-right: 10px;" />
+            </a>
+            <!-- Mobile menu button -->
+            <div class="flex items-center lg:order-2">
+               <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                  </svg>
+                  <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+               </button>
+            </div>
+            <!-- Main navigation menu -->
+            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+               <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-16 lg:mt-0">
+                  <li>
+                     <a href="{% url 'home' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Главная</a>
+                  </li>
+                  <!-- Projects button -->
+                  <li class="relative border-b border-gray-700" style="z-index: 10;">
+                     <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 text-sm text-left block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 focus:outline-none transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">
+                           <span style="font-family: 'CenturyGothic', Arial, sans-serif;">Проекты</span>
+                           <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                           </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 xl:w-48">
+                           <div class="px-2 w-96 py-2 bg-gray-950 rounded-md shadow">
+                              <a class="block w-96 px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'interior_page' %}">Дизайн интерьеров квартир</a>
+                              <a class="block w-96 px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'exterior_page' %}">Дизайн интерьеров таунхаусов</a>
+                              <a class="block w-96 px-4 py-2 mt-2 text-l text-white border-b border-gray-700 bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'privateHouse_page' %}">Дизайн интерьеров частных домов</a>
+                              <a class="block w-96 px-4 py-2 mt-2 text-l text-white bg-transparent rounded-lg md:mt-0 hover:text-[#cda173] focus:text-white hover:bg-gray-700 focus:bg-gray-700 focus:outline-none focus:shadow-outline" href="{% url 'kitchen_page' %}">Дизайн кухонных наборов</a>
                            </div>
                         </div>
-                     </li>
-                     <li>
-                        <a href="{% url 'about' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">О нас</a>
-                     </li>
-                     <li>
-                        <a href="{% url 'services' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Услуги</a>
-                     </li>
-                     <!-- Add other navigation links as needed -->
-                     <li id="interButton">
-                        <a href="{% url 'blog_page' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Блог</a>
-                     </li>
-                     <li id="contactButton">
-                        <a href="{% url 'contact' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;"" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Контакты</a>
-                     </li>
-                  </ul>
-               </div>
+                     </div>
+                  </li>
+                  <li>
+                     <a href="{% url 'services' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Услуги</a>
+                  </li>
+                  <!-- Add other navigation links as needed -->
+                  <li id="interButton">
+                     <a href="{% url 'blog_page' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Блог</a>
+                  </li>
+                  <li id="contactButton">
+                     <a href="{% url 'contact' %}" style="font-family: 'CenturyGothic', Arial, sans-serif;"" class="block py-3 pr-6 pl-4 text-xl text-white border-b border-gray-700 transition-all duration-300 transform hover:text-[#cda173] hover:translate-x-1 lg:hover:bg-transparent lg:border-0 lg:p-0">Контакты</a>
+                  </li>
+               </ul>
             </div>
-         </nav>
-      </header>
+         </div>
+      </nav>
+   </header>
       <!-- test -->
       <div class="section section--back" style="height: 100vh;">
          <video autoplay="" muted="" loop="" class="section__back section__back--video">
             <source src="media/media/skyc.mp4" type="video/mp4">
          </video>
+
          <img class="section__back section__back--image" src="https://zrobim.us/assets/images/mob-screen-new.jpg" alt="ZROBIM architects">
          <div class="header__header">
          </div>
@@ -92,7 +92,7 @@
                   <div class="section__header-title" style="font-family: 'CenturyGothic', Arial, sans-serif;">
                      Дизайн <strong style="font-family: 'CenturyGothic', Arial, sans-serif; font-weight: bold;">со смыслом</strong>
                   </div>
-                  <div class="section__header-subtitle" style="font-family: 'CenturyGothic', Arial, sans-serif;">TOBE architects</div>
+                  <div class="section__header-subtitle" style="font-family: 'CenturyGothic', Arial, sans-serif;">GULIMA DESIGN</div>
                </div>
             </div>
          </div>
@@ -111,19 +111,18 @@
             <div class="section__body-col">
                <div class="section__header- scrolled" data-scroll="title">
                   <div class="section__header-title" style="font-family: 'CenturyGothic', Arial, sans-serif;">
-                     TOBE <strong>architects</strong>
+                     GULIMA  <strong style="display: inline;">DESIGN</strong>
                   </div>
-                  <div class="section__header-subtitle">Информация о нас</div>
+                  <div class="section__header-subtitle">Немного информации о нас</div>
                </div>
                <div class="section__buttons" style="margin-top:150px">
-                  <a href="{% url 'about' %}" target="_blank" class="button">Узнайте о нас</a>
+                  <a href="{% url 'about' %}" target="_blank" class="button">Узнать больше</a>
                </div>
             </div>
             <div class="section__body-col">
-               <div class="section__content" style="font-family: 'CenturyGothic', Arial, sans-serif;">
-                  <h1>Международная студия архитектуры и дизайна</h1>
-                  <p>Архитектурная студия Tobe Group вдохновляется инновациями мировой архитектуры и дизайна, чтобы создавать уникальные проекты для каждого клиента. Мы стремимся не просто создавать здания и интерьеры, а воплощать мечты и желания наших заказчиков в реальность.</p>
-                  <p>Мы верим, что каждый проект - это искусство, воплощенное в архитектуре, и каждое здание, каждый интерьер должен быть уникальным, как отпечаток пальца. Наша студия работает над каждым проектом с любовью и вниманием к деталям, чтобы создать пространство, которое будет радовать и вдохновлять своих обитателей каждый день.</p>
+               <div class="section__content" style="font-family: 'CenturyGothic', Arial, sans-serif; margin-bottom: auto;">
+                  <h1>Дизайн Студия</h1>
+                  <p>Дизайн-студия GULIMA DESIGN всегда нацелена на применение передовых концепций и технологий в своих проектах. Мы создаем уникальные дизайнерские решения, которые не только улучшают пространство, но и изменяют жизнь наших клиентов к лучшему.</p>
                </div>
             </div>
          </div>
@@ -138,10 +137,10 @@
                <div class="philosophy__header">
                   <div class="section__header scrolled" data-scroll="title">
                      <div class="section__header-title">
-                        <strong>Выходя за Рамки</strong>
+                        <strong>Мы в цифрах</strong>
                      </div>
                      <div class="section__header-subtitle">
-                        слоган нашей компании
+                        180 проектов, 80 реализованных проектов, 20+ обучений
                      </div>
                   </div>
                </div>
@@ -178,11 +177,9 @@
                </ul>
             </div>
             <div class="section__body-col">
-               <div class="section__content">
-                  <h4>Дизайн со смыслом </h4>
+               <div class="section__content" style="margin-bottom: auto;">
+                  <h4>Архитектура с идеей </h4>
                   <p>Архитектурная студия Tobe Group призвана создавать пространства, которые не просто соответствуют ожиданиям, но и превосходят их. Мы идем дальше традиционного понимания дизайна и архитектуры, стремясь к совершенству в каждой детали.</p>
-                  <p>Наши проекты - это искусство с идеей. Мы не просто проектируем здания и интерьеры, мы создаем окружающую среду, которая вдохновляет и трансформирует пространство в живой организм, приспосабливающийся к потребностям своих обитателей.</p>
-                  <p>Инновации - наша страсть. Мы используем самые передовые технологии и мировые тенденции в дизайне, чтобы сделать каждый проект уникальным и функциональным. Мы стремимся к тому, чтобы наши проекты не просто отвечали потребностям клиентов, но и становились источником вдохновения и новаторских решений для всей отрасли.</p>
                </div>
             </div>
          </div>
@@ -200,20 +197,23 @@
                      <div class="section__body">
                         <div class="section__body-col col-sm-p-0">
                            <div class="pride_cats_img-before">
-                              <img class="pride_cats_img" src="/media/exteriors/2.JPG" alt="ZROBIM architects">
+                              <img class="pride_cats_img" src="/media/media/001.jpg" alt="ZROBIM architects">
                            </div>
                         </div>
                         <div class="section__body-col pride__item-content">
                            <div class="cats__header">
                               <div class="section__header-title">
-                                 АРХИТЕКТУРНОЕ <strong>ПРОЕКТИРОВАНИЕ</strong>
+                                 Дизайн интерьеров <strong>частных домов</strong>
                               </div>
                            </div>
                            <div class="section__content">
-                              <p class="pt-10">При выборе индивидуального проектирования дома с Tobe Group вы получаете уверенность в том, что каждая деталь соответствует вашим желаниям и вкусам. Наша архитектурная студия не приступит к работе, пока не поймет, каким должен быть ваш идеальный дом.</p>
+                              <p class="pt-10">Когда вы выбираете индивидуальный дизайн интерьера для своего дома, каждая деталь должна соответствовать вашим желаниям и вкусам. Наша команда дизайнеров не приступит к работе, не проанализировав и не учтя все ваши пожелания к будущему облику вашего дома</p>
+                              <p>Мы начинаем проект с тщательного обсуждения, чтобы полностью понять вашу визию. Создание концепции начинается с рукописного наброска, в котором дизайнер стремится воплотить и передать свои идеи.
+                                 Отлично! Если у вас есть еще какие-либо запросы или нужна помощь с чем-то еще, не стесняйтесь обращаться.
+                                 </p>
                            </div>
                            <div class="section__buttons">
-                              <a href="{% url 'exterior_page' %}" class="button button--white">Посмотреть</a>
+                              <a href="{% url 'privateHouse_page' %}" class="button button--white">Посмотреть проекты</a>
                            </div>
                         </div>
                      </div>
@@ -228,19 +228,47 @@
                         <div class="section__body-col pride__item-content">
                            <div class="cats__header">
                               <div class="section__header-title">
-                                 Дизайн <strong>Интерьера </strong>
+                                 СОВРЕМЕННЫЙ ДИЗАЙН <strong>ИНТЕРЬЕРА КВАРТИР</strong>
                               </div>
                            </div>
                            <div class="section__content">
-                              <p class="pt-10">Современный дизайн интерьера для нас - это не просто создание красивых пространств, но и решение комплекса задач. Мы стремимся к созданию функциональных, стильных и инновационных интерьеров для различных типов помещений - от частного жилья до офисов, кафе и музеев.</p>
+                              <p class="pt-10">Современный дизайн интерьера — это не просто оформление, это комплексное решение задач. Мы учитываем бюджет, функциональность, эстетику и другие аспекты. Наш аналитический подход позволяет нам создавать дизайн для жилых помещений, офисов, кафе, ресторанов, баров, галерей, музеев и многого другого.</p>
+                              <p>Мы внимательно изучаем задачи, поставленные перед нами клиентом и пространством интерьера. Наша цель - эффективно использовать бюджет и создать уникальный дизайн, отвечающий конкретным требованиям.</p>
                            </div>
                            <div class="section__buttons">
-                              <a href="{% url 'interior_page' %}" class="button button--white">Посмотреть</a>
+                              <a href="{% url 'interior_page' %}" class="button button--white">Посмотреть проекты</a>
                            </div>
                         </div>
                         <div class="section__body-col col-sm-p-0">
                            <div class="pride_cats_img-before">
-                              <img class="pride_cats_img" src="/media/interiors/1.jpg" alt="TOBE architects">
+                              <img class="pride_cats_img" src="/media/media/02.jpg" alt="TOBE architects">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="separ"></div>
+                  </div>
+               </div>
+               <div id="pride-cat-1" class="pride_cats_li">
+                  <div class="pride_cats_item">
+                     <hr class="grid-row">
+                     <div class="separ"></div>
+                     <div class="section__body">
+                        <div class="section__body-col col-sm-p-0">
+                           <div class="pride_cats_img-before">
+                              <img class="pride_cats_img" src="/media/media/6.jpg" alt="ZROBIM architects">
+                           </div>
+                        </div>
+                        <div class="section__body-col pride__item-content">
+                           <div class="cats__header">
+                              <div class="section__header-title">
+                                 Дизайн интерьеров <strong>таунхаусов</strong>
+                              </div>
+                           </div>
+                           <div class="section__content">
+                              <p class="pt-10">Каждый таунхаус — это уникальное пространство, где каждая деталь должна отражать ваш стиль и желания. Наша команда дизайнеров готова воплотить ваши мечты в реальность, начиная с тщательного анализа и обсуждения. Мы не просто создаем дизайн, мы создаем атмосферу, которая будет радовать вас каждый день. Позвольте нам помочь вам создать идеальное пространство, которое станет отражением вашей личности и стиля жизни.</p>
+                           </div>
+                           <div class="section__buttons">
+                              <a href="{% url 'exterior_page' %}" class="button button--white">Посмотреть проекты</a>
                            </div>
                         </div>
                      </div>
@@ -253,410 +281,114 @@
       <hr class="grid-row">
       <section >
          <div class=" mx-auto text-center py-12">
-            <h1 class="mb-4 text-4xl tracking-tight leading-none text-white md:text-5xl lg:text-6xl" style="color: #383838; font-weight: bold;">Услуги и цены</h1>
-            <div class=" flex flex-wrap p-8 w-full">
-               <div class="mx-auto md:w-1/2 lg:w-1/3 sm:w-full ">
-                  <div class="mb-9 rounded-xl  py-8    lg:px-6 xl:px-9">
-                     <div class="col col-md-8">
-                        <div class="widget" id="widget_20533619" data-id="20533619" data-type="simple-image">
-                           <script type="text/json" class="widget-options">
-                              {"photoData":{"id":"61170908","name":"Alena_Pautova-6490e3cc1cab1a27ca1430875475b064.jpg","crop":[],"size":{"height":"933","width":"1400"},"width":"1400","height":"933","bg":"rgba(83,76,70,.7)"},"storage":"\/\/static-cdn5-2.vigbo.tech\/u9516\/12073\/blog\/3286868\/1575782\/20533619\/"}
-                           </script>
+            <h1 class="mb-4 text-4xl tracking-tight leading-none text-white md:text-5xl lg:text-6xl" style="color: #383838; font-weight: bold;">ОСНОВНЫЕ НАПРАВЛЕНИЯ</h1>
+            <div class=" flex flex-wrap w-full">
+
+
+               <div class="container mx-auto w-full h-full py-10">
+                  <div class="relative wrap overflow-hidden h-full">
+                     <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style="left: 50%"></div>
+                     <!-- left timeline -->
+                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline text-end">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 shadow-xl w-8 h-8 rounded-full" style="background-color: #6B9E96;">
                         </div>
-                        <div class="widget pt-10 id="widget_74689653" data-id="74689653" data-type="simple-text">
-                           <div class="element simple-text colorbg" id="w_74689653" style="background-color: #f0f0f0; ">
-                              <a class="copy-protect" href="http://alenapautova.ru/Design-progect/post-preview/5656675?view-panel=Design-progect/post-preview/5656675 " target="_blank">
-                                 <div class="element simple-image origin mod--gallery-easy ae--hover-effect__type-scale " id="w_20533619">
-                                    <div class="image-box ae--hover-effect__parent js--hover-effect__parent" style="max-width: 100%; text-align: center; ">
-                                       <div class="image-block ae--hover-effect__child-first">
-                                          <div class="gallery-squery-bg mod--center is--dynamic-loaded" style="background-color: rgba(83,76,70,.7); max-"></div>
-                                          <img style="opacity: 1;  max-width: 100%; height: auto;" class="js--pin-show image-pic gallery-image-in js-dynamic-in-queue is--dynamic-loaded" src="/media/interiors/2ааааа.jpg" data-dynamic="true" alt="" width="1400" height="933" data-width="1400" data-height="933">
-                                          <div class="ae--hover-effect__child-first__inner js--pin-show"></div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </a>
-                              <div class="text-box text-box-test1 nocolumns" style="max-width: 80%; -moz-column-gap: 10px; -webkit-column-gap: 10px; column-gap: 10px; letter-spacing: 0em; line-height: 1.3; margin: 0 auto; ">
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16"><span style="font-size:21px;" class="mod--fs_21">ДИЗАЙН-ПРОЕКТ</span></p>
-                                 <p class="mod--fs_16"><span style="font-size:21px;" class="mod--fs_21">6 500 ₽&nbsp;</span><span style="font-size:14px;" class="mod--fs_14">/ м2&nbsp; </span>&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                              </div>
-                              <div class="section__buttons pb-10" style="width: 80%; margin: auto;">
-                                 <button target="_blank" class="button" data-modal-target="popup-modal1"  data-modal-toggle="popup-modal1">Подробнее</button>
-                              </div>
-                              <div id="popup-modal1" style=" z-index: 9999; font-family: 'CenturyGothic', Arial, sans-serif;" tabindex="-1" class="popup-outter hidden w-xl overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center  md:inset-0 h-[calc(100%-1rem)] max-h-full" >
-                                 <div class="popup-inner relative max-h-full">
-                                    <div class="relative bg-white rounded-lg">
-                                       <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal1">
-                                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                          </svg>
-                                          <span class="sr-only">Close modal</span>
-                                       </button>
-                                       <div class="p-4 md:p-5 text-center">
-                                          <div class="container custom__content--max-width">
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20535467" data-id="20535467" data-type="post-title">
-                                                      <div class="element post-title" id="w_20535467">
-                                                         <div class="widget-content">
-                                                            <style> #w_20535467 .title-shell { color: #000000; font-family: Didact Gothic; font-size: 21px; justify-content: center; } #w_20535467 .title { letter-spacing: 0.15em; margin-right: -0.15em; line-height: 1.2em; } #w_20535467 .title-shell:before, #w_20535467 .title-shell:after { background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RiZGJkYiIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=); background-position: 50% 50%; background-repeat: repeat-x; } </style>
-                                                            <div class="title-wrapper">
-                                                               <div class="title-shell">
-                                                                  <p class="title stop-css"> УСЛУГИ И ЦЕНЫ </p>
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20535554" data-id="20535554" data-type="post-break-line">
-                                                      <div class="element post-break-line" id="w_20535554">
-                                                         <div class="break-line" style="width: 100%; margin: 0px auto;">
-                                                            <div class="decoration" style="background: url(&quot;data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JkYmRiZCIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=&quot;) center center repeat-x;"></div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="widget" id="widget_20535545" data-id="20535545" data-type="post-title">
-                                                      <div class="element post-title" id="w_20535545">
-                                                         <div class="widget-content">
-                                                            <style> #w_20535545 .title-shell { color: #000000; font-family: Didact Gothic; font-size: 21px; justify-content: center; } #w_20535545 .title { letter-spacing: 0.15em; margin-right: -0.15em; line-height: 1.2em; } #w_20535545 .title-shell:before, #w_20535545 .title-shell:after { background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RiZGJkYiIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=); background-position: 50% 50%; background-repeat: repeat-x; } </style>
-                                                            <div class="title-wrapper">
-                                                               <div class="title-shell">
-                                                                  <p class="title stop-css"> ДИЗАЙН-ПРОЕКТ </p>
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20535632" data-id="20535632" data-type="simple-text">
-                                                      <div class="element simple-text transparentbg" id="w_20535632" style="background-color: transparent; ">
-                                                         <div class="text-box text-box-test1 nocolumns" style="max-width: 100%; -moz-column-gap: 50px; -webkit-column-gap: 50px; column-gap: 50px; letter-spacing: 0em; line-height: 1.3; font-family: 'Didact Gothic'; font-size: 16px !important; margin: 0 auto; ">
-                                                            <p class="mod--fs_16"><u><span style="font-size:18px;" class="mod--fs_18">ЭТАП 1 - ТЕХНИЧЕСКОЕ ЗАДАНИЕ</span></u><br> <br> <span style="font-size:16px;" class="mod--fs_16">На стадии разработки&nbsp;технического задания происходит выявление и формулировка желаний и потребностей заказчика. На основании всей полученной информации, осуществляется дальнейшее проектирование.</span></p>
-                                                            <p class="mod--fs_16"><br> СОСТАВ РАБОТ:<br> <br> <span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- анализ информационных материалов, предоставляемых заказчиком</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- составление технического задания на разработку дизайн-проекта</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- план обмера</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- план обмера коммуникаций</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- фотофиксация</span></span></p>
-                                                            <p class="mod--fs_16">&nbsp;</p>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="widget" id="widget_20536226" data-id="20536226" data-type="post-break-line">
-                                                      <div class="element post-break-line" id="w_20536226">
-                                                         <div class="break-line" style="width: 100%; margin: 0px auto;">
-                                                            <div class="decoration" style="background: url(&quot;data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JkYmRiZCIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=&quot;) center center repeat-x;"></div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20536259" data-id="20536259" data-type="simple-text">
-                                                      <div class="element simple-text transparentbg" id="w_20536259" style="background-color: transparent; ">
-                                                         <div class="text-box text-box-test1 nocolumns" style="max-width: 100%; -moz-column-gap: 50px; -webkit-column-gap: 50px; column-gap: 50px; letter-spacing: 0em; line-height: 1.3; font-family: 'Didact Gothic'; font-size: 16px !important; margin: 0 auto; ">
-                                                            <p class="mod--fs_16"><span style="font-size:18px;" class="mod--fs_18"><u>ЭТАП 2 - ЭСКИЗНЫЙ ПРОЕКТ</u></span><br> <br> <span style="font-size:16px;" class="mod--fs_16">На данном этапе утверждается геометрия помещения (без цветов и текстур)</span></p>
-                                                            <p class="mod--fs_16"><br> <span style="font-family:didact gothic,sans-serif;">СОСТАВ РАБОТ:</span><br> <br> <span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- <span style="font-family:didact gothic,sans-serif;">разработка планировочного решения, план расстановки мебели и оборудования</span></span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="letter-spacing: 0em;">- создание эскизов, в виде простых 3d изображений, которые условно отображают объемно пространственное решение помещения</span></span></p>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="widget" id="widget_20536337" data-id="20536337" data-type="post-gallery">
-                                                      <script type="text/json" class="widget-options">
-                                                         {"photos":[[{"id":"59878480","width":"1500","height":"1000","file":"Alena_Pautova-44016382a17b20e238722ad66f3aaf2c.jpg"},{"id":"59878477","width":"1000","height":"1500","file":"Alena_Pautova-009c7c2483763332b7a2a8de9c411cc2.jpg"},{"id":"59878479","width":"1500","height":"1000","file":"Alena_Pautova-ef4662ad7d9d83537d8f9a508a287521.jpg"},{"id":"59878483","width":"1000","height":"1500","file":"Alena_Pautova-8f363674026ee48b63878bf858467d3b.jpg"}]],"photoGap":10,"storage":"\/\/static-cdn5-2.vigbo.tech\/u9516\/12073\/blog\/3286868\/1575782\/20536337\/","fullscreen":"y"}
-                                                      </script>
-                                                      <style> .adaptive-desktop #widget_20536337 { width: 50%; } </style>
-                                                      <style> #widget_20536337 .gallery-photo-box-title { color: #000000; font-family: Arial; font-size: 12px; letter-spacing: 0em; line-height: 1.3; } /* For mobile indent*/ .adaptive-mobile #widget_20536337 .wg-post-gallery { margin-top: -5px !important; } .adaptive-mobile #widget_20536337 .wg-post-gallery .gallery-photo-box { padding-top: 5px; padding-bottom: 5px; } </style>
-                                                   </div>
-                                                   <div class="widget" id="widget_20536262" data-id="20536262" data-type="post-break-line">
-                                                      <div class="element post-break-line" id="w_20536262">
-                                                         <div class="break-line" style="width: 100%; margin: 0px auto;">
-                                                            <div class="decoration" style="background: url(&quot;data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JkYmRiZCIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=&quot;) center center repeat-x;"></div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row pb-10">
-                                                <div class="col col-md-24">
-                                                   <div class="contact-form-button-wrapper pt-5" style="width: 40vw; margin-right: auto; margin-left: auto;">
-                                                      <a href="https://wa.me/777777777" class="button primary w-button" style="display: flex; background-color: #25D366; justify-content: center;" onmouseover="this.style.backgroundColor='#1AAE4F';"  onmouseout="this.style.backgroundColor='#25D366';">
-                                                      Написать в Whatsapp 
-                                                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 5 70 64" style="vertical-align: middle; margin-left: 5px;">
-                                                         <path fill="#FFFFFF" d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z M 16.642578 15 C 17.028118 15 17.408214 15.004701 17.726562 15.019531 C 18.054056 15.035851 18.033687 15.037192 17.970703 15.007812 C 17.906713 14.977972 17.993533 14.968282 18.179688 15.410156 C 18.423098 15.98801 18.84317 16.999249 19.21875 17.900391 C 19.40654 18.350961 19.582292 18.773816 19.722656 19.105469 C 19.863021 19.437122 19.939077 19.622295 20.027344 19.798828 L 20.027344 19.800781 L 20.029297 19.802734 C 20.115837 19.973483 20.108185 19.864164 20.078125 19.923828 C 19.867096 20.342656 19.838461 20.445493 19.625 20.691406 C 19.29998 21.065838 18.968453 21.483404 18.792969 21.65625 C 18.639439 21.80707 18.36242 22.042032 18.189453 22.501953 C 18.016221 22.962578 18.097073 23.59457 18.375 24.066406 C 18.745032 24.6946 19.964406 26.679307 21.859375 28.347656 C 23.05276 29.399678 24.164563 30.095933 25.052734 30.564453 C 25.940906 31.032973 26.664301 31.306607 26.826172 31.386719 C 27.210549 31.576953 27.630655 31.72467 28.119141 31.666016 C 28.607627 31.607366 29.02878 31.310979 29.296875 31.007812 L 29.298828 31.005859 C 29.655629 30.601347 30.715848 29.390728 31.224609 28.644531 C 31.246169 28.652131 31.239109 28.646231 31.408203 28.707031 L 31.408203 28.708984 L 31.410156 28.708984 C 31.487356 28.736474 32.454286 29.169267 33.316406 29.580078 C 34.178526 29.990889 35.053561 30.417875 35.337891 30.558594 C 35.748225 30.761674 35.942113 30.893881 35.992188 30.894531 C 35.995572 30.982516 35.998992 31.07786 35.986328 31.222656 C 35.951258 31.624292 35.8439 32.180225 35.628906 32.775391 C 35.523582 33.066746 34.975018 33.667661 34.283203 34.105469 C 33.591388 34.543277 32.749338 34.852514 32.4375 34.898438 C 31.499896 35.036591 30.386672 35.087027 29.164062 34.703125 C 28.316336 34.437036 27.259305 34.092596 25.890625 33.509766 C 23.114812 32.325956 20.755591 30.311513 19.070312 28.537109 C 18.227674 27.649908 17.552562 26.824019 17.072266 26.199219 C 16.592866 25.575584 16.383528 25.251054 16.208984 25.021484 L 16.207031 25.019531 C 15.897202 24.609805 14 21.970851 14 19.59375 C 14 17.077989 15.168497 16.091436 15.800781 15.410156 C 16.132721 15.052495 16.495617 15 16.642578 15 z"></path>
-                                                      </svg>
-                                                      </a>
-                                                   </div>
-                                                   <div class="contact-form-button-wrapper pt-5" style="width: 40vw; margin-right: auto; margin-left: auto;">
-                                                      <a href="https://t.me/john" class="button primary w-button" style="display: flex; background-color: #229ED9;justify-content: center;" onmouseover="this.style.backgroundColor='#1678B0';" onmouseout="this.style.backgroundColor='#229ED9';">Написать в Telegram <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 10 64 64">
-                                                         <path fill="#FFFFFF" d="M32,10c12.15,0,22,9.85,22,22s-9.85,22-22,22s-22-9.85-22-22S19.85,10,32,10z M39.589,40.968	c0.404-1.241,2.301-13.615,2.534-16.054c0.071-0.738-0.163-1.229-0.619-1.449c-0.553-0.265-1.371-0.133-2.322,0.21	c-1.303,0.47-17.958,7.541-18.92,7.951c-0.912,0.388-1.775,0.81-1.775,1.423c0,0.431,0.256,0.673,0.96,0.924	c0.732,0.261,2.577,0.82,3.668,1.121c1.05,0.29,2.243,0.038,2.913-0.378c0.709-0.441,8.901-5.921,9.488-6.402	c0.587-0.48,1.056,0.135,0.576,0.616c-0.48,0.48-6.102,5.937-6.844,6.693c-0.901,0.917-0.262,1.868,0.343,2.249	c0.689,0.435,5.649,3.761,6.396,4.295c0.747,0.534,1.504,0.776,2.198,0.776C38.879,42.942,39.244,42.028,39.589,40.968z"></path>
-                                                         </svg> </a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>							  
-                           </div>
+                        <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 sm: px-2 py-4">
+                           <h3 class="mb-3 font-bold text-gray-800 text-xl">1. СОСТАВЛЕНИЕ ТЕХ.ЗАДАНИЯ ПОДПИСАНИЕ ДОГОВОРА</h3>
+                           <p class="text-m font-medium leading-snug tracking-wide text-gray-800 text-opacity-100">представляет собой документ, в котором описывается все, касающееся будущего
+                              интерьера - идеи, стили, материалы,
+                              решения.</p>
+                        </div>
+                     </div>
+                     <!-- right timeline -->
+                     <div class="mb-8 flex justify-between items-center w-full right-timeline text-start">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 shadow-xl w-8 h-8 rounded-full" style="background-color: #6B9E96;">
+                        </div>
+                        <div class="order-1  rounded-lg shadow-xl w-5/12 px-6 sm: px-2 py-4">
+                           <h3 class="mb-3 font-bold text-gray-800 text-xl">2. ЭСКИЗНЫЙ ПРОЕКТ</h3>
+                           <p class="text-m leading-snug tracking-wide text-gray-900 text-opacity-100">на этом этапе (перед визуализацией)
+                              согласовываем варианты планировок и деталей проекта</p>
+                        </div>
+                     </div>
+                     <!-- left timeline -->
+                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline text-end">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 shadow-xl w-8 h-8 rounded-full" style="background-color: #6B9E96;">
+                        </div>
+                        <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 sm: px-2 py-4">
+                           <h3 class="mb-3 font-bold text-gray-800 text-xl">3. ВИЗУАЛИЗАЦИЯ</h3>
+                           <p class="text-m font-medium leading-snug tracking-wide text-gray-800 text-opacity-100">по готовности визуализации встречаемся
+                              для согласования окончательных картинок</p>
+                        </div>
+                     </div>
+                     <!-- right timeline -->
+                     <div class="mb-8 flex justify-between items-center w-full right-timeline text-start">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 shadow-xl w-8 h-8 rounded-full" style="background-color: #6B9E96;">
+                        </div>
+                        <div class="order-1  rounded-lg shadow-xl w-5/12 px-6 sm: px-2 py-4">
+                           <h3 class="mb-3 font-bold text-gray-800 text-xl">4. РАБОЧИЙ ПРОЕКТ</h3>
+                           <p class="text-m leading-snug tracking-wide text-gray-900 text-opacity-100">на последнем этапе получаем рабочий проект</p>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="  md:w-1/2 lg:w-1/3 sm:w-full ">
-                  <div class="mb-9 rounded-xl bg-white py-8   lg:px-6 xl:px-9">
-                     <div class="col col-md-8">
-                        <div class="widget" id="widget_60874669" data-id="60874669" data-type="simple-image">
-                           <script type="text/json" class="widget-options">
-                              {"photoData":{"id":"59878013","name":"Alena_Pautova-8f5c8266a4e6056a61159832cd6a2487.jpg","crop":[],"size":{"height":"3997","width":"6000"},"width":"6000","height":"3997","bg":"rgba(133,131,129,.7)"},"storage":"\/\/static-cdn5-2.vigbo.tech\/u9516\/12073\/blog\/3286868\/1575782\/60874669\/"}
-                           </script>
-                        </div>
-                        <div class="widget pt-10" id="widget_74689653" data-id="74689653" data-type="simple-text">
-                           <div class="element simple-text colorbg" id="w_74689653" style="background-color: #f0f0f0; ">
-                              <a class="copy-protect" href="http://alenapautova.ru/avtorskij-nadzor/post-preview/5661195?view-panel=avtorskij-nadzor/post-preview/5661195 " target="_self">
-                                 <div class="element simple-image origin mod--gallery-easy " id="w_60874669">
-                                    <div class="image-box ae--hover-effect__parent js--hover-effect__parent" style="max-width: 100%; text-align: center; ">
-                                       <div class="image-block ae--hover-effect__child-first">
-                                          <div class="gallery-squery-bg mod--center is--dynamic-loaded" style="background-color: rgba(133,131,129,.7); max-"></div>
-                                          <img style="opacity: 1;  max-width: 100%; height: 40vh;" class="js--pin-show image-pic gallery-image-in js-dynamic-in-queue is--dynamic-loaded" src="/media/interior_images/5.jpg"  data-dynamic="true" alt="" width="6000" height="3997" data-width="6000" data-height="3997">
-                                          <div class="ae--hover-effect__child-first__inner js--pin-show"></div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </a>
-                              <div class="text-box text-box-test1 nocolumns" style="max-width: 80%; -moz-column-gap: 10px; -webkit-column-gap: 10px; column-gap: 10px; letter-spacing: 0em; line-height: 1.3; margin: 0 auto; ">
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16"><span style="font-size:21px;" class="mod--fs_21">ДИЗАЙН-ПРОЕКТ</span></p>
-                                 <p class="mod--fs_16"><span style="font-size:21px;" class="mod--fs_21">6 500 ₽&nbsp;</span><span style="font-size:14px;" class="mod--fs_14">/ м2&nbsp; </span>&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                              </div>
-                              <div class="section__buttons pb-10" style="width: 80%; margin: auto;">
-                                 <button target="_blank" class="button" data-modal-target="popup-modal2"  data-modal-toggle="popup-modal2">Подробнее</button>
-                              </div>
-                              <div id="popup-modal2" style=" z-index: 9999; font-family: 'CenturyGothic', Arial, sans-serif;" tabindex="-1" class="popup-outter hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                 <div class="popup-inner relative p-4  max-h-full" > 
-                                    <div class="relative bg-white rounded-lg" >
-                                       <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal2">
-                                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                          </svg>
-                                          <span class="sr-only">Close modal</span>
-                                       </button>
-                                       <div class="p-4 md:p-5 text-center">
-                                          <div class="container custom__content--max-width">
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20607347" data-id="20607347" data-type="simple-text">
-                                                      <div class="element simple-text transparentbg" id="w_20607347" style="background-color: transparent; ">
-                                                         <div class="text-box text-box-test1 nocolumns" style="max-width: 100%; -moz-column-gap: 50px; -webkit-column-gap: 50px; column-gap: 50px; letter-spacing: 0em; line-height: 1.3; font-family: 'Didact Gothic'; font-size: 16px !important; margin: 0 auto; ">
-                                                            <p class="mod--fs_16"><span style="font-size:18px;" class="mod--fs_18"><u><span style="font-family:didact gothic,sans-serif;">ЭТАП 3 - ВИЗУАЛИЗАЦИИ</span></u></span><br> &nbsp;</p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16">Фотореалистичная визуализация дает полное представление о том, какой будет интерьер. На данном этапе согласовываются материалы отделки, цвета и фактуры.</span></p>
-                                                            <p class="mod--fs_16">&nbsp;</p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="font-family:didact gothic,sans-serif;">СОСТАВ РАБОТ:</span><br> <br> <span style="letter-spacing: 0em;">-&nbsp;3D визуализация согласованных помещений проекта, не включая подсобные и технические помещения</span></span></p>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="widget" id="widget_20607353" data-id="20607353" data-type="post-gallery">
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20607446" data-id="20607446" data-type="simple-text">
-                                                      <div class="element simple-text transparentbg" id="w_20607446" style="background-color: transparent; ">
-                                                         <div class="text-box text-box-test1 nocolumns" style="max-width: 100%; -moz-column-gap: 50px; -webkit-column-gap: 50px; column-gap: 50px; letter-spacing: 0em; line-height: 1.3; font-family: 'Didact Gothic'; font-size: 16px !important; margin: 0 auto; ">
-                                                            <p class="mod--fs_16"><span style="font-size:18px;" class="mod--fs_18"><u>ЭТАП 4 - РАБОЧИЙ ПРОЕКТ</u></span><br> &nbsp;</p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16">Включает в себя все необходимые для реализации дизайн-проекта чертежи:</span></p>
-                                                            <p class="mod--fs_16">&nbsp;</p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план обмера</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план обмера коммуникаций</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план демонтажа</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план возводимых конструкций</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- сводный план демонтируемых и возводимых конструкций</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план расстановки мебели&nbsp;</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план теплых полов</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план размещения кондиционеров</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план размещения сантехнического оборудования</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план полов&nbsp;</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- план потолков</span></p>
-                                                            <p class="mod--fs_16"><span style="letter-spacing: 0em; font-size: 16px; background-color: transparent;" class="mod--fs_16">- разрезы по потолкам</span></p>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="widget" id="widget_20607449" data-id="20607449" data-type="post-break-line">
-                                                      <div class="element post-break-line" id="w_20607449">
-                                                         <div class="break-line" style="width: 100%; margin: 0px auto;">
-                                                            <div class="decoration" style="background: url(&quot;data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JkYmRiZCIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=&quot;) center center repeat-x;"></div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row pb-10">
-                                                <div class="col col-md-24">
-                                                   <div class="contact-form-button-wrapper pt-5" style="width: 40vw; margin-right: auto; margin-left: auto;">
-                                                      <a href="https://wa.me/777777777" class="button primary w-button" style="display: flex; background-color: #25D366; justify-content: center;" onmouseover="this.style.backgroundColor='#1AAE4F';"  onmouseout="this.style.backgroundColor='#25D366';">
-                                                      Написать в Whatsapp 
-                                                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 5 70 64" style="vertical-align: middle; margin-left: 5px;">
-                                                         <path fill="#FFFFFF" d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z M 16.642578 15 C 17.028118 15 17.408214 15.004701 17.726562 15.019531 C 18.054056 15.035851 18.033687 15.037192 17.970703 15.007812 C 17.906713 14.977972 17.993533 14.968282 18.179688 15.410156 C 18.423098 15.98801 18.84317 16.999249 19.21875 17.900391 C 19.40654 18.350961 19.582292 18.773816 19.722656 19.105469 C 19.863021 19.437122 19.939077 19.622295 20.027344 19.798828 L 20.027344 19.800781 L 20.029297 19.802734 C 20.115837 19.973483 20.108185 19.864164 20.078125 19.923828 C 19.867096 20.342656 19.838461 20.445493 19.625 20.691406 C 19.29998 21.065838 18.968453 21.483404 18.792969 21.65625 C 18.639439 21.80707 18.36242 22.042032 18.189453 22.501953 C 18.016221 22.962578 18.097073 23.59457 18.375 24.066406 C 18.745032 24.6946 19.964406 26.679307 21.859375 28.347656 C 23.05276 29.399678 24.164563 30.095933 25.052734 30.564453 C 25.940906 31.032973 26.664301 31.306607 26.826172 31.386719 C 27.210549 31.576953 27.630655 31.72467 28.119141 31.666016 C 28.607627 31.607366 29.02878 31.310979 29.296875 31.007812 L 29.298828 31.005859 C 29.655629 30.601347 30.715848 29.390728 31.224609 28.644531 C 31.246169 28.652131 31.239109 28.646231 31.408203 28.707031 L 31.408203 28.708984 L 31.410156 28.708984 C 31.487356 28.736474 32.454286 29.169267 33.316406 29.580078 C 34.178526 29.990889 35.053561 30.417875 35.337891 30.558594 C 35.748225 30.761674 35.942113 30.893881 35.992188 30.894531 C 35.995572 30.982516 35.998992 31.07786 35.986328 31.222656 C 35.951258 31.624292 35.8439 32.180225 35.628906 32.775391 C 35.523582 33.066746 34.975018 33.667661 34.283203 34.105469 C 33.591388 34.543277 32.749338 34.852514 32.4375 34.898438 C 31.499896 35.036591 30.386672 35.087027 29.164062 34.703125 C 28.316336 34.437036 27.259305 34.092596 25.890625 33.509766 C 23.114812 32.325956 20.755591 30.311513 19.070312 28.537109 C 18.227674 27.649908 17.552562 26.824019 17.072266 26.199219 C 16.592866 25.575584 16.383528 25.251054 16.208984 25.021484 L 16.207031 25.019531 C 15.897202 24.609805 14 21.970851 14 19.59375 C 14 17.077989 15.168497 16.091436 15.800781 15.410156 C 16.132721 15.052495 16.495617 15 16.642578 15 z"></path>
-                                                      </svg>
-                                                      </a>
-                                                   </div>
-                                                   <div class="contact-form-button-wrapper pt-5" style="width: 40vw; margin-right: auto; margin-left: auto;">
-                                                      <a href="https://t.me/john" class="button primary w-button" style="display: flex; background-color: #229ED9;justify-content: center;" onmouseover="this.style.backgroundColor='#1678B0';" onmouseout="this.style.backgroundColor='#229ED9';">Написать в Telegram <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 10 64 64">
-                                                         <path fill="#FFFFFF" d="M32,10c12.15,0,22,9.85,22,22s-9.85,22-22,22s-22-9.85-22-22S19.85,10,32,10z M39.589,40.968	c0.404-1.241,2.301-13.615,2.534-16.054c0.071-0.738-0.163-1.229-0.619-1.449c-0.553-0.265-1.371-0.133-2.322,0.21	c-1.303,0.47-17.958,7.541-18.92,7.951c-0.912,0.388-1.775,0.81-1.775,1.423c0,0.431,0.256,0.673,0.96,0.924	c0.732,0.261,2.577,0.82,3.668,1.121c1.05,0.29,2.243,0.038,2.913-0.378c0.709-0.441,8.901-5.921,9.488-6.402	c0.587-0.48,1.056,0.135,0.576,0.616c-0.48,0.48-6.102,5.937-6.844,6.693c-0.901,0.917-0.262,1.868,0.343,2.249	c0.689,0.435,5.649,3.761,6.396,4.295c0.747,0.534,1.504,0.776,2.198,0.776C38.879,42.942,39.244,42.028,39.589,40.968z"></path>
-                                                         </svg> </a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class=" md:w-1/2 lg:w-1/3 sm:w-ful">
-                  <div class="mb-9 rounded-xl bg-white py-8  lg:px-6 xl:px-9">
-                     <div class="col col-md-8">
-                        <div class="widget" id="widget_20533622" data-id="20533622" data-type="simple-image">
-                           <script type="text/json" class="widget-options">
-                              {"photoData":{"id":"59878229","name":"Alena_Pautova-cceae2c2a6272a7fa55b4657cb15ef27.jpg","crop":[],"size":{"height":"3997","width":"6000"},"width":"6000","height":"3997","bg":"rgba(136,133,137,.7)"},"storage":"\/\/static-cdn5-2.vigbo.tech\/u9516\/12073\/blog\/3286868\/1575782\/20533622\/"}
-                           </script>
-                        </div>
-                        <div class="widget pt-10" id="widget_74689653" data-id="74689653" data-type="simple-text">
-                           <div class="element simple-text colorbg" id="w_74689653" style="background-color: #f0f0f0; ">
-                              <a>
-                                 <div class="element simple-image origin mod--gallery-easy " id="w_20533622">
-                                    <div class="image-box ae--hover-effect__parent js--hover-effect__parent" style="max-width: 100%; text-align: center; ">
-                                       <div class="image-block ae--hover-effect__child-first">
-                                          <div class="gallery-squery-bg mod--center is--dynamic-loaded" style="background-color: rgba(136,133,137,.7); max-"></div>
-                                          <img style="opacity: 1;  max-width: 100%; height: 40vh;" class="js--pin-show image-pic gallery-image-in js-dynamic-in-queue is--dynamic-loaded" src="/media/interior_images/1aaaaaa.jpg"  data-dynamic="true" alt="" width="6000" height="3997" data-width="6000" data-height="3997">
-                                          <div class="ae--hover-effect__child-first__inner js--pin-show"></div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </a>
-                              <div class="text-box text-box-test1 nocolumns" style="max-width: 80%; -moz-column-gap: 10px; -webkit-column-gap: 10px; column-gap: 10px; letter-spacing: 0em; line-height: 1.3; margin: 0 auto; ">
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16"><span style="font-size:21px;" class="mod--fs_21">ДИЗАЙН-ПРОЕКТ</span></p>
-                                 <p class="mod--fs_16"><span style="font-size:21px;" class="mod--fs_21">6 500 ₽&nbsp;</span><span style="font-size:14px;" class="mod--fs_14">/ м2&nbsp; </span>&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                                 <p class="mod--fs_16">&nbsp;</p>
-                              </div>
-                              <div class="section__buttons pb-10" style="width: 80%; margin: auto;">
-                                 <button target="_blank" class="button" data-modal-target="popup-modal3"  data-modal-toggle="popup-modal3">Подробнее</button>
-                              </div>
-                              <div id="popup-modal3" style="z-index: 9999; font-family: 'CenturyGothic', Arial, sans-serif;"  tabindex="-1" class="popup-outter hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                 <div class="popup-inner p-4 max-h-full">
-                                    <div class="relative bg-white rounded-lg shadow">
-                                       <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="popup-modal3">
-                                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                          </svg>
-                                          <span class="sr-only">Close modal</span>
-                                       </button>
-                                       <div class="section__content">
-                                          <div class="container custom__content--max-width">
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_62182422" data-id="62182422" data-type="post-indent">
-                                                      <div class="wg-post-indent" id="w_62182422">
-                                                         <div class="wg-post-indent__inner" style="width: 100%; height: 40px;"></div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="widget" id="widget_62182423" data-id="62182423" data-type="post-title">
-                                                      <div class="element post-title" id="w_62182423">
-                                                         <div class="widget-content">
-                                                            <style> #w_62182423 .title-shell { color: #000000; font-family: Didact Gothic; font-size: 21px; justify-content: center; } #w_62182423 .title { letter-spacing: 0.15em; margin-right: -0.15em; line-height: 1.2em; } #w_62182423 .title-shell:before, #w_62182423 .title-shell:after { background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2RiZGJkYiIgZD0iTTAsNC41TDEsNC41IiBzdHJva2Utd2lkdGg9IjFweCI+PC9wYXRoPjwvc3ZnPgo=); background-position: 50% 50%; background-repeat: repeat-x; } </style>
-                                                            <div class="title-wrapper">
-                                                               <div class="title-shell">
-                                                                  <h2 class="title stop-css mod--fs_21"> АВТОРСКОЕ СОПРОВОЖДЕНИЕ </h2>
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                                <div class="col col-md-24">
-                                                   <div class="widget" id="widget_20532215" data-id="20532215" data-type="simple-text">
-                                                      <div class="element simple-text transparentbg" id="w_20532215" style="background-color: transparent; ">
-                                                         <div class="text-box text-box-test1 nocolumns" style="max-width: 100%; -moz-column-gap: 50px; -webkit-column-gap: 50px; column-gap: 50px; letter-spacing: 0em; line-height: 1.3; font-family: 'Didact Gothic'; font-size: 16px !important; margin: 0 auto; ">
-                                                            <p class="mod--fs_16"><span style="background-color: inherit; color: rgb(105, 105, 105); letter-spacing: 0em;">На данном этапе осуществляется визуальный контроль над реализацией дизайн-проекта.</span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="color: rgb(105, 105, 105); letter-spacing: 0em; line-height: 1.3; background-color: inherit;">Это комплекс мероприятий, осуществляемый автором проекта&nbsp; для того, чтобы обеспечить реализацию дизайн-проекта именно в том виде, в каком он был задуман и спроектирован. В случаях, когда требуются изменения или дополнения проектных решений, &nbsp;обеспечить внесение таких изменений именно автором проекта, как стороной, имеющей комплексное представление обо всех проектных решениях и их взаимосвязи.</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="color: rgb(105, 105, 105); letter-spacing: 0em; line-height: 1.3; background-color: inherit;">Авторский надзор НЕ ЯВЛЯЕТСЯ ТЕХНИЧЕСКИМ НАДЗОРОМ ПО КАЧЕСТВУ выполняемых строительно-монтажных работ.&nbsp;</span></span></p>
-                                                            <p class="mod--fs_16"><br> <span style="font-size:16px;" class="mod--fs_16"><span style="color:#696969;">СОСТАВ РАБОТ:</span></span></p>
-                                                            <p class="mod--fs_16">&nbsp;</p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="color:#696969;">- регулярные выезды на объект (один раз в неделю)</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="color:#696969;">- визуальный контроль проводимых работ в соответствии с дизайн-проектом, а именно: соблюдение размеров и привязок конструкций (перегородок и проемов), электрики (розеток, выключателей, электро-выводов), сантехники, потолков, осветительных приборов, элементов отделки</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="color: rgb(105, 105, 105); letter-spacing: 0em; line-height: 1.3; background-color: transparent;">-&nbsp;необходимое общение с прорабом на объекте, в том числе и по телефону (консультации по всем предоставленным чертежам)</span></span></p>
-                                                            <p class="mod--fs_16"><span style="font-size:16px;" class="mod--fs_16"><span style="color:#696969;">-&nbsp;</span><span style="color: rgb(105, 105, 105); letter-spacing: 0em; line-height: 1.3; background-color: inherit;">внесение изменений в чертежи проекта, возникших при демонтаже старых и возведении новых перегородок, после выравнивания полов, стен и потолков</span></span></p>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row">
-                                             </div>
-                                             <div class="row pb-10">
-                                                <div class="col col-md-24">
-                                                   <div class="whatsapp contact-form-button-wrapper pt-5">
-                                                      <a href="https://wa.me/777777777" class="button primary w-button" style="display: flex; background-color: #25D366; justify-content: center;" onmouseover="this.style.backgroundColor='#1AAE4F';"  onmouseout="this.style.backgroundColor='#25D366';">
-                                                      Написать в Whatsapp 
-                                                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 5 70 64" style="vertical-align: middle; margin-left: 5px;">
-                                                         <path fill="#FFFFFF" d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z M 16.642578 15 C 17.028118 15 17.408214 15.004701 17.726562 15.019531 C 18.054056 15.035851 18.033687 15.037192 17.970703 15.007812 C 17.906713 14.977972 17.993533 14.968282 18.179688 15.410156 C 18.423098 15.98801 18.84317 16.999249 19.21875 17.900391 C 19.40654 18.350961 19.582292 18.773816 19.722656 19.105469 C 19.863021 19.437122 19.939077 19.622295 20.027344 19.798828 L 20.027344 19.800781 L 20.029297 19.802734 C 20.115837 19.973483 20.108185 19.864164 20.078125 19.923828 C 19.867096 20.342656 19.838461 20.445493 19.625 20.691406 C 19.29998 21.065838 18.968453 21.483404 18.792969 21.65625 C 18.639439 21.80707 18.36242 22.042032 18.189453 22.501953 C 18.016221 22.962578 18.097073 23.59457 18.375 24.066406 C 18.745032 24.6946 19.964406 26.679307 21.859375 28.347656 C 23.05276 29.399678 24.164563 30.095933 25.052734 30.564453 C 25.940906 31.032973 26.664301 31.306607 26.826172 31.386719 C 27.210549 31.576953 27.630655 31.72467 28.119141 31.666016 C 28.607627 31.607366 29.02878 31.310979 29.296875 31.007812 L 29.298828 31.005859 C 29.655629 30.601347 30.715848 29.390728 31.224609 28.644531 C 31.246169 28.652131 31.239109 28.646231 31.408203 28.707031 L 31.408203 28.708984 L 31.410156 28.708984 C 31.487356 28.736474 32.454286 29.169267 33.316406 29.580078 C 34.178526 29.990889 35.053561 30.417875 35.337891 30.558594 C 35.748225 30.761674 35.942113 30.893881 35.992188 30.894531 C 35.995572 30.982516 35.998992 31.07786 35.986328 31.222656 C 35.951258 31.624292 35.8439 32.180225 35.628906 32.775391 C 35.523582 33.066746 34.975018 33.667661 34.283203 34.105469 C 33.591388 34.543277 32.749338 34.852514 32.4375 34.898438 C 31.499896 35.036591 30.386672 35.087027 29.164062 34.703125 C 28.316336 34.437036 27.259305 34.092596 25.890625 33.509766 C 23.114812 32.325956 20.755591 30.311513 19.070312 28.537109 C 18.227674 27.649908 17.552562 26.824019 17.072266 26.199219 C 16.592866 25.575584 16.383528 25.251054 16.208984 25.021484 L 16.207031 25.019531 C 15.897202 24.609805 14 21.970851 14 19.59375 C 14 17.077989 15.168497 16.091436 15.800781 15.410156 C 16.132721 15.052495 16.495617 15 16.642578 15 z"></path>
-                                                      </svg>
-                                                      </a>
-                                                   </div>
-                                                   <div class="telegram contact-form-button-wrapper pt-5">
-                                                      <a href="https://t.me/john" class="button primary w-button" style="display: flex; background-color: #229ED9;justify-content: center;" onmouseover="this.style.backgroundColor='#1678B0';" onmouseout="this.style.backgroundColor='#229ED9';">Написать в Telegram <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 10 64 64">
-                                                         <path fill="#FFFFFF" d="M32,10c12.15,0,22,9.85,22,22s-9.85,22-22,22s-22-9.85-22-22S19.85,10,32,10z M39.589,40.968	c0.404-1.241,2.301-13.615,2.534-16.054c0.071-0.738-0.163-1.229-0.619-1.449c-0.553-0.265-1.371-0.133-2.322,0.21	c-1.303,0.47-17.958,7.541-18.92,7.951c-0.912,0.388-1.775,0.81-1.775,1.423c0,0.431,0.256,0.673,0.96,0.924	c0.732,0.261,2.577,0.82,3.668,1.121c1.05,0.29,2.243,0.038,2.913-0.378c0.709-0.441,8.901-5.921,9.488-6.402	c0.587-0.48,1.056,0.135,0.576,0.616c-0.48,0.48-6.102,5.937-6.844,6.693c-0.901,0.917-0.262,1.868,0.343,2.249	c0.689,0.435,5.649,3.761,6.396,4.295c0.747,0.534,1.504,0.776,2.198,0.776C38.879,42.942,39.244,42.028,39.589,40.968z"></path>
-                                                         </svg> </a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+
+
             </div>
          </div>
       </section>
       <!-- modal window section -->
       <!-- footer -->
 
+
+      <section class="all-projects" style="background-color: #525659; padding: 20px;">
+
+
+         <div class="mx-auto px-4 py-8" style="width: 80%;">
+            <div class="text-center mb-8 text-center">
+                <h1 class="text-sm text-gray-600 font-normal leading-normal sm:text-base sm:mb-2" style="color: #CDA173;">Портфолио</h1>
+                <h2 class=" text-gray-800 font-semibold leading-tight sm:text-xl sm:mb-2 pt-5" style="font-size: 40px;">Ознакомьтесь с нашими проектами</h2>
+                <p class="text-xl text-gray-500 sm:text-base sm:leading-snug w-1/2 mx-auto sm:w-full pt-5" style="color: white;">Наши интерьеры — это отражение характера, настроения, привычек и образа вашей жизни, объединенное в тот стиль, который близок вам по духу.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {% for project in combined_projects %}
+                <a href="{% url project.detail_view_name project.id %}" class="group block">
+                    <div class="relative overflow-hidden" style="height: 300px;">
+                        <img src="{{ project.main_image.url }}" alt="{{ project.get_name }}" class="w-full h-full object-cover transition-transform duration-300 sm:group-hover:scale-110">
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 transition-opacity duration-300 opacity-0 sm:group-hover:opacity-100">
+                            <div class="text-center hidden sm:block">
+                                <p class="text-white text-lg font-semibold">{{ project.get_name }}</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold text-center p-2 bg-black bg-opacity-40 block sm:hidden">{{ project.get_name }}</div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
       <footer class="bg-white rounded-lg m-4 pt-20" style="position: relative; z-index: 2;">
          <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
              <div class="sm:flex sm:items-center sm:justify-between">
                  <a href="{% url 'home' %}" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                     <img src="/media/media/tobe_mainlogo_dark.png" class="h-8" alt="Flowbite Logo" />
-                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TÓBE</span>
+                     <img src="/media/media/randomLogo.png" class="h-8" alt="Flowbite Logo" />
+                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GULIMA DESIGN</span>
                  </a>
                  <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                      <li>
